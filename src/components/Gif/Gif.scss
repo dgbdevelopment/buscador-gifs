@@ -1,0 +1,26 @@
+.gif {
+  position: relative;
+  width: 100%;
+  // page-break-inside: avoid;
+  // break-inside: avoid;
+  display: inline-block;
+  & video {
+    width: 100%;
+  }
+  & button {
+    position: absolute;
+    bottom: 2.5em;
+    right: 2em;
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+    & .material-icons {
+      color: $text-color;
+      cursor: pointer;
+      font-size: 3em;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

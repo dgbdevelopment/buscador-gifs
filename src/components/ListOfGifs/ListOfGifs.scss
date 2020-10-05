@@ -1,0 +1,32 @@
+.ListOfGifs-content {
+  // column-count: 2;
+  // gap: 1em;
+  // @include tablet {
+  //   column-count: 3;
+  // }
+  // @include laptop {
+  //   column-count: 4;
+  // }
+  // @include desktop {
+  //   column-count: 5;
+  // }
+  & h1,
+  & p {
+    column-span: all;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  & .go-top {
+    position: fixed;
+    padding: 1em;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 1px black;
+    bottom: 3em;
+    right: 3em;
+    z-index: 10;
+    & span {
+      font-size: 3em;
+      font-weight: bolder;
+    }
+  }
+}

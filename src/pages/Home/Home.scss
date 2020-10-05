@@ -1,0 +1,48 @@
+.Home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-height: calc(100vh - 5em);
+  @include tablet {
+    flex-direction: row;
+  }
+
+  & img {
+    width: 70%;
+    @include tablet {
+      width: 40%;
+    }
+  }
+  & .text-content {
+    width: 70%;
+    text-align: center;
+    padding-bottom: 3em;
+    @include tablet {
+      text-align: left;
+      width: 40%;
+    }
+    & h1 {
+      color: $primary-color;
+      padding-bottom: 1em;
+    }
+    & p {
+      line-height: 1.7em;
+      & span {
+        transform: translateY(5px);
+      }
+    }
+    & a {
+      display: inline-block;
+      color: $text-color;
+      background-color: $primary-color;
+      padding: 0.5em 1em;
+      margin-top: 1em;
+      border-radius: 5px;
+      transition: opacity 0.2s linear;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}

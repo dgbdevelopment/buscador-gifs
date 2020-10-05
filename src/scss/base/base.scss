@@ -1,0 +1,77 @@
+:root {
+  --text-color: #dddddd;
+  --bg-color: #15202b;
+  --primary-color: #00adb4;
+}
+
+$text-color: var(--text-color);
+$bg-color: (var(--bg-color));
+$primary-color: var(--primary-color);
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
+
+$title-font: "Montserrat", sans-serif;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$main-font: "Inter", sans-serif;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $main-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $text-color;
+  font-size: 16px;
+  background-color: $bg-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $title-font;
+  font-weight: 600;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  color: white;
+  background-color: $primary-color;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+  &:hover {
+    background-color: darken(#00adb4, 7);
+  }
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}

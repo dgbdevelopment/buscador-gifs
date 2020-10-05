@@ -1,0 +1,38 @@
+.nav {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  height: 3em;
+  padding: 0.5em 0.5em;
+  @include tablet {
+    padding: 0.5em 2em;
+  }
+  & .logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    & span {
+      display: none;
+      margin-left: 1em;
+      font-size: 1.1em;
+      color: $primary-color;
+      @include tablet {
+        display: inherit;
+      }
+    }
+  }
+  & h1 {
+    display: none;
+    @include tablet {
+      display: inherit;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import "./scss/mixins/breakpoints.scss";
+@import "./scss/base/base.scss";
+
+@import "./scss/Components/App.scss";
+@import "./components/Nav/Nav.scss";
+@import "./components/SearchForm/SearchForm.scss";
+@import "./components/Gif/Gif.scss";
+@import "./pages/Home/Home.scss";
+@import "./components/ListOfGifs/ListOfGifs.scss";
