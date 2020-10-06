@@ -1,6 +1,6 @@
 const API_KEY = process.env.REACT_APP_API_KEY_DEV;
 
-export default function getGifs(keyword, page = 0) {
+export default async function getGifs(keyword, page = 0) {
   let URL;
   const limit = 24;
 

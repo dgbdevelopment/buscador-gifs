@@ -15,7 +15,7 @@ export default function ListOfGifs({ params }) {
     getGifs(keyword).then((gifs) => {
       setGifs(gifs);
       setLoading(false);
-      setPage((prevPage) => prevPage + 1);
+      setPage(1);
     });
   }, [keyword]);
 
@@ -37,35 +37,35 @@ export default function ListOfGifs({ params }) {
       ) : gifs.length === 0 && keyword ? (
         <p>No hemos encontrado nada con {decodeURI(keyword)}</p>
       ) : (
-        <>
-          {keyword ? (
-            <h1>Gifs de {decodeURI(keyword)}</h1>
-          ) : (
-            <h1>Últimas tendencias</h1>
+            <>
+              {keyword ? (
+                <h1>Gifs de {decodeURI(keyword)}</h1>
+              ) : (
+                  <h1>Últimas tendencias</h1>
+                )}
+              <div id="gallery">
+                <InfiniteScroll
+                  dataLength={gifs.length} //This is important field to render the next data
+                  next={nextGifs}
+                  hasMore={true}
+                  loader={<h4>Loading...</h4>}
+                >
+                  <ResponsiveMasonry
+                    columnsCountBreakPoints={{ 312: 1, 381: 2, 718: 3, 974: 4 }}
+                  >
+                    <Masonry gutter={"0.75em"}>
+                      {gifs.map((gif) => (
+                        <Gif key={gif.id} title={gif.title} id={gif.id} />
+                      ))}
+                    </Masonry>
+                  </ResponsiveMasonry>
+                </InfiniteScroll>
+                <button onClick={goTop} className="go-top">
+                  <span className="material-icons">arrow_upward</span>
+                </button>
+              </div>
+            </>
           )}
-          <div id="gallery">
-            <InfiniteScroll
-              dataLength={gifs.length} //This is important field to render the next data
-              next={nextGifs}
-              hasMore={true}
-              loader={<h4>Loading...</h4>}
-            >
-              <ResponsiveMasonry
-                columnsCountBreakPoints={{ 312: 1, 381: 2, 718: 3, 974: 4 }}
-              >
-                <Masonry gutter={"0.75em"}>
-                  {gifs.map((gif) => (
-                    <Gif key={gif.id} title={gif.title} id={gif.id} />
-                  ))}
-                </Masonry>
-              </ResponsiveMasonry>
-            </InfiniteScroll>
-            <button onClick={goTop} className="go-top">
-              <span className="material-icons">arrow_upward</span>
-            </button>
-          </div>
-        </>
-      )}
     </div>
   );
 }
